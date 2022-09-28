@@ -7,6 +7,7 @@ import './Players.css'
 const Players = () => {
     const [search, setSearch] = useState('');
     const [players, setPlayers] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect(() => {
         fetch(`https://www.thesportsdb.com/api/v1/json/2/searchplayers.php?p=${search}`)
@@ -23,27 +24,34 @@ const Players = () => {
     console.log(players)
     return (
         <div >
-             <input onClick={(e) => setSearch(e.target.value)} type="text"  style={{marginLeft:'45%',padding:'10px',marginTop:'10px'}}/>
-             <p>players:{players.length}</p>
-             <div className='sports-container'>
-            <div className="players-container">
-               
-                   
-                {
-                    players.map(player => <Player
-                        player={player}
-                        key={player.idPlayer} >
-                    </Player>)
-                }
-             </div>
-            <div className="cart-container">
-                <h3>cart-container</h3>
+            <input onClick={(e) => setSearch(e.target.value)} type="text" style={{ marginLeft: '45%', padding: '10px', marginTop: '10px' }} />
+            <p>players:{players.length}</p>
+            <div className='sports-container'>
+                <div className="players-container">
+
+
+                    {
+                        players.map(player => <Player
+                            player={player}
+                            key={player.idPlayer}
+                            cart={cart}
+                            setCart={setCart}
+                        >
+                        </Player>)
+                    }
+                </div>
+                <div className="cart-container">
+                    {
+                        cart.map(p => <p>Name:{p.strPlayer
+                        }</p>)
+                    }
+                    <h3>cart-container</h3>
+                </div>
             </div>
-        </div>
 
         </div>
-    
-       
+
+
     );
 };
 

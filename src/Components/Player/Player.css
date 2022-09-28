@@ -10,3 +10,12 @@
 
     width: 200px;
 }
+.player-btn{
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    background-color: brown;
+    color: white;
+    font-weight: 600;
+
+}
