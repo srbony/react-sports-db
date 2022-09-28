@@ -1,0 +1,12 @@
+.player {
+    border: 1px solid gray;
+    padding: 20px;
+    width: 300px;
+    margin: 20px;
+
+}
+
+.player img {
+
+    width: 200px;
+}

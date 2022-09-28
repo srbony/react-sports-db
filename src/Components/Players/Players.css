@@ -1,0 +1,16 @@
+.sports-container {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+}
+
+.sports-container input {
+    padding: 10px;
+    margin-left: 50%;
+}
+
+.players-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
